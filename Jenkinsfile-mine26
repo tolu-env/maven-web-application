@@ -10,7 +10,7 @@ node{
    sh "${mavenHome}/bin/mvn sonar:sonar"
  }
  stage('4UploadArtifacts'){
-   sh "${mavenHome}/bin/mvn -X deploy"
+   sh "${mavenHome}/bin/mvn deploy"
  }
   stage('6Manualapproval'){
     sh "echo 'ready for review' "
