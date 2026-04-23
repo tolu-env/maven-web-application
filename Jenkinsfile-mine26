@@ -1,0 +1,28 @@
+node{
+  def mavenHome = tool name: '3.9.14'
+ stage('1.CodeClone'){
+    git credentialsId: 'GitHub Credentials', url: 'https://github.com/tolu-env/webapp.git'
+   }
+ stage('2MavenBuild'){
+   sh "${mavenHome}/bin/mvn package"
+ }
+  stage('3codeQuality'){
+   sh "${mavenHome}/bin/mvn sonar:sonar"
+ }
+ stage('4UploadArtifacts'){
+   sh "${mavenHome}/bin/mvn deploy"
+ }
+  stage('6Manualapproval'){
+    sh "echo 'ready for review' "
+    timeout(time:5, unit:'HOURS') {
+    input message: 'Application ready for deployment, Please review and approve.'
+    }
+ }
+ stage('8emailNotify'){
+    emailext body: '''Hello Team,
+
+Build is done.
+
+LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'toluojo01@gmail.com'
+  }
+}
