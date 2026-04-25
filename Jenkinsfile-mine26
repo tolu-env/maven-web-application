@@ -24,9 +24,3 @@ node{
 
   }
 }
-
-Build is done.
-
-LANDMARKTECH''', recipientProviders: [developers(), contributor(), upstreamDevelopers()], subject: 'Build Status', to: 'toluojo01@gmail.com'
-  }
-}
