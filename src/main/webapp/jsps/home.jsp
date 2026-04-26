@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Paypal Web Application Malta26 Project.</h1>
+<h1 align="center">Welcome to Paypal Web Application 26 Project.</h1>
 <h1 align="center">We are developing and supporting quality software solutions for millions of clients globally.
 	           We are raising millionaires in IT automation.
 	We offer Training for DevOps with Linux and Cloud, equipping IT Engineers for the best performance.
